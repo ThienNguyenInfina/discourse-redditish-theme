@@ -24,7 +24,7 @@
       p {
         color: var(--primary-high);
         margin: 0;
-        + .custom-right-sidebar_controls {
+        + .custom-right-custom-right-sidebar-sticky_controls {
           margin-top: 1em;
         }
       }
@@ -45,7 +45,7 @@
       }
     }
 
-    &_welcome + .custom-right-sidebar_controls {
+    &_welcome + .custom-right-sidebar-sticky_controls {
       margin-top: 0.5em;
     }
 

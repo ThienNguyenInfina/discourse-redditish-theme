@@ -1,5 +1,5 @@
 {{#if this.isTopRoute}}
-  <div class="custom-right-sidebar_welcome">
+  <div class="custom-right-sidebar-sticky_welcome">
     <h2>{{theme-i18n "top_route_welcome"}}</h2>
     <p>
       {{html-safe (theme-i18n "top_route_description")}}
@@ -13,7 +13,7 @@
       />
     {{/if}}
   </div>
-  <div class="custom-right-sidebar_recent">
+  <div class="custom-right-sidebar-sticky_recent">
     <SidebarLatestTopics />
   </div>
 {{/if}}

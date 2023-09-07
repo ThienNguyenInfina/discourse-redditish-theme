@@ -6,7 +6,7 @@
     {{did-update this.getTagNotificationLevel this.tagId}}
   >
     {{#if (or this.tag.description this.currentUser)}}
-      <div class="custom-right-sidebar_tag-about">
+      <div class="custom-right-sidebar-sticky_tag-about">
         {{#if this.tag.description}}
           <h3>{{theme-i18n "about_tag"}}</h3>
           <p>{{html-safe this.tag.description}}</p>
@@ -22,7 +22,7 @@
           {{/if}}
         {{/if}}
         {{#if this.currentUser}}
-          <div class="custom-right-sidebar_controls">
+          <div class="custom-right-sidebar-sticky_controls">
             {{#if this.currentUser.can_create_topic}}
               <DButton
                 @class="btn-default"
