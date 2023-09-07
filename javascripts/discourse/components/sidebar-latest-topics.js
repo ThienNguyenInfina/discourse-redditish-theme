@@ -17,7 +17,7 @@ export default class LatestTopicsSidebar extends Component {
     topicList = await this.store.findFiltered("topicList", {
       filter: "top",
       params: {
-        order: "created",
+        period: "daily",
       },
     });
 
