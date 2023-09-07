@@ -9,11 +9,7 @@
       {{/unless}}
     {{/unless}}
     <span class="custom-topic-layout_meta-posted">
-      <span class="custom-topic-layout_meta-posted-by">Đăng bởi</span>
-      <a
-        data-user-card={{topic.posters.0.user.username}}
-        href="/u/{{topic.posters.0.user.username}}"
-      >@{{topic.posters.0.user.username}}</a>
+      <span class="custom-topic-layout_meta-posted-by">Đăng bởi @{{topic.posters.0.user.name}}</span>
       {{format-date
         topic.createdAt
         format="medium"
