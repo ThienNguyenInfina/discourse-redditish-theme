@@ -50,7 +50,9 @@
   <div class="link-bottom-line">
     {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
   </div>
-
+    <div class="custom-topic-layout_excerpt">
+      {{raw "list/topic-excerpt" topic=topic}}
+    </div>
   {{#if topic.thumbnails}}
     <div class="custom-topic-layout_image">
       <img
@@ -60,11 +62,6 @@
       />
     </div>
   {{/if}}
-  {{#unless topic.thumbnails}}
-    <div class="custom-topic-layout_excerpt">
-      {{raw "list/topic-excerpt" topic=topic}}
-    </div>
-  {{/unless}}
   <div class="custom-topic-layout_bottom-bar">
     <span class="reply-count">
       {{d-icon "reply"}}
