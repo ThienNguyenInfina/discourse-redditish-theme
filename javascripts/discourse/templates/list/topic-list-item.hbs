@@ -11,9 +11,9 @@
     <span class="custom-topic-layout_meta-posted">
       <span class="custom-topic-layout_meta-posted-by">Đăng bởi</span>
       <a
-        data-user-card={{topic.posters.0.user.name}}
+        data-user-card={{topic.posters.0.user.username}}
         href="/u/{{topic.posters.0.user.username}}"
-      >@{{topic.posters.0.user.name}}</a>
+      >@{{topic.posters.0.user.username}}</a>
       {{format-date
         topic.createdAt
         format="medium"
