@@ -9,11 +9,11 @@
       {{/unless}}
     {{/unless}}
     <span class="custom-topic-layout_meta-posted">
-      <span class="custom-topic-layout_meta-posted-by">Posted by</span>
+      <span class="custom-topic-layout_meta-posted-by">Đăng bởi</span>
       <a
-        data-user-card={{topic.posters.0.user.username}}
+        data-user-card={{topic.posters.0.user.name}}
         href="/u/{{topic.posters.0.user.username}}"
-      >@{{topic.posters.0.user.username}}</a>
+      >@{{topic.posters.0.user.name}}</a>
       {{format-date
         topic.createdAt
         format="medium"
@@ -51,7 +51,7 @@
     {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
   </div>
   <div class="custom-topic-layout_excerpt">
-      {{raw "list/topic-excerpt" topic=topic}}
+    {{raw "list/topic-excerpt" topic=topic}}
   </div>
   {{#if topic.thumbnails}}
     <div class="custom-topic-layout_image">
@@ -66,11 +66,11 @@
     <span class="reply-count">
       {{d-icon "reply"}}
       {{topic.replyCount}}
-      Replies
+      {{i18n "replies"}}
     </span>
     <span class="share-toggle">
       {{d-icon "link"}}
-      Share
+      {{i18n "post.quote_share"}}
     </span>
   </div>
 </div>
