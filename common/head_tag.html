@@ -1,28 +1,46 @@
 <script type="text/discourse-plugin" version="0.8">
-  const user = api.getCurrentUser();
-
-  // user is already logged in, bail
-  if (user) {
-      return;
-  };
-
   document.addEventListener('DOMContentLoaded', function() {
-      const loginButton = document.querySelector(".login-button");
 
-      const spanLabel = loginButton.querySelector(".d-button-label");
+    const loginButton = document.querySelector(".login-button");
 
-      if (spanLabel) {
-          spanLabel.textContent = "Tải ứng dụng";
-      };
+    const spanLabel = loginButton.querySelector(".d-button-label");
 
-      loginButton.addEventListener('click', function(event) {
-          // Prevent default behavior
-          event.preventDefault();
+    if (spanLabel) {
+        spanLabel.textContent = "Tải ứng dụng";
+    };
 
-          // Stop propagation to prevent other event listeners from being called
-          event.stopPropagation();
+    loginButton.addEventListener('click', function(event) {
+        // Prevent default behavior
+        event.preventDefault();
 
-          window.location.href = "https://onelink.to/seohomepageinfina";
-      }, true);
+        // Stop propagation to prevent other event listeners from being called
+        event.stopPropagation();
+
+        window.location.href = "https://onelink.to/seohomepageinfina";
+    }, true);
+
+    const user = api.getCurrentUser();
+
+    // user is already logged in, bail
+    if (!user) {
+        const replyButton = document.querySelector(".topic-footer-buttons button:has(.d-icon-reply)");
+        const likeButton = document.querySelector(".actions .double-button .toggle-like");
+
+        if(replyButton) {
+            replyButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                console.log("do something with reply");
+            }, true);
+        }
+
+        if(likeButton) {
+            likeButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                console.log("do something with like");
+            }, true);
+        }
+    };
   });
 </script>
