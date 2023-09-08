@@ -3,23 +3,19 @@
 
   // user is already logged in, bail
   if (user) {
-    return;
+      return;
   }
 
-  // do your work here...
-  const clickCallback = (clickEvent) => {
-    console.log(clickEvent);
-    console.log('doing something');
-    alert("user is logging in");
-    // ..
-    // ..
-  };
+  document.addEventListener('DOMContentLoaded', function() {
+      const loginButton = document.querySelector(".login-button");
+      loginButton.addEventListener('click', function(event) {
+          // Prevent default behavior
+          event.preventDefault();
 
-  api.onAppEvent("modal:body-shown", (event) => {
-    const loginButton = document.querySelector(".login-button");
+          // Stop propagation to prevent other event listeners from being called
+          event.stopPropagation();
 
-    if (loginButton) {
-      loginButton.addEventListener("click", clickCallback, { once: true });
-    }
+          window.location.href = "https://infina.vn";
+      }, true);
   });
 </script>
