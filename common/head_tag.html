@@ -1,28 +1,32 @@
-<script type="text/discourse-plugin" version="0.8">
+<!-- <script type="text/discourse-plugin" version="0.8">
   document.addEventListener('DOMContentLoaded', function() {
 
-    const loginButton = document.querySelector(".login-button");
 
-    const spanLabel = loginButton.querySelector(".d-button-label");
-
-    if (spanLabel) {
-        spanLabel.textContent = "Tải ứng dụng";
-    };
-
-    loginButton.addEventListener('click', function(event) {
-        // Prevent default behavior
-        event.preventDefault();
-
-        // Stop propagation to prevent other event listeners from being called
-        event.stopPropagation();
-
-        window.location.href = "https://onelink.to/seohomepageinfina";
-    }, true);
   });
-</script>
+</script> -->
 
 <script type="text/discourse-plugin" version="0.8">
     api.onPageChange((url, title) => {  
+
+        const loginButton = document.querySelector(".login-button");
+
+        const spanLabel = loginButton.querySelector(".d-button-label");
+    
+        if (spanLabel) {
+            spanLabel.textContent = "Tải ứng dụng";
+        };
+    
+        loginButton.addEventListener('click', function(event) {
+            // Prevent default behavior
+            event.preventDefault();
+    
+            // Stop propagation to prevent other event listeners from being called
+            event.stopPropagation();
+    
+            window.location.href = "https://onelink.to/seohomepageinfina";
+        }, true);
+
+
       const user = api.getCurrentUser();
   
       // If user is not logged in
