@@ -7,11 +7,13 @@
         const replyButton = document.querySelector("#topic-footer-buttons .btn-icon-text");
         const likeButton = document.querySelector(".actions .double-button .toggle-like");
 
+        const showModal = require("discourse/lib/show-modal").default;
+
         if(replyButton) {
             replyButton.addEventListener('click', function(event) {
                 event.preventDefault();
                 event.stopPropagation();
-                console.log("do something with reply");
+                showModal("customModal");
             }, true);
         }
 
@@ -19,7 +21,7 @@
             likeButton.addEventListener('click', function(event) {
                 event.preventDefault();
                 event.stopPropagation();
-                console.log("do something with like");
+                showModal("customModal");
             }, true);
         }
     }
