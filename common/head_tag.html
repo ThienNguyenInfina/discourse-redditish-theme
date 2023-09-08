@@ -4,10 +4,17 @@
   // user is already logged in, bail
   if (user) {
       return;
-  }
+  };
 
   document.addEventListener('DOMContentLoaded', function() {
       const loginButton = document.querySelector(".login-button");
+
+      const spanLabel = loginButton.querySelector(".d-button-label");
+
+      if (spanLabel) {
+          spanLabel.textContent = "Tải ứng dụng";
+      };
+
       loginButton.addEventListener('click', function(event) {
           // Prevent default behavior
           event.preventDefault();
@@ -15,7 +22,7 @@
           // Stop propagation to prevent other event listeners from being called
           event.stopPropagation();
 
-          window.location.href = "https://infina.vn";
+          window.location.href = "https://onelink.to/seohomepageinfina";
       }, true);
   });
 </script>

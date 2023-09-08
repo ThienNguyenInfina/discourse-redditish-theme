@@ -45,8 +45,14 @@
 
 .d-header .contents .header-buttons button {
   padding: 8px 12px 8px 12px;
+  background-image: linear-gradient(352deg, #0666eb 43%, #178bfc);
 
-  .d-button-label { 
+  .d-icon {
+    display: none;
+    width: 0;
+  }
+
+  .d-button-label {
     width: 6rem;
   }
 }
