@@ -1,55 +1,67 @@
-<!-- <script type="text/discourse-plugin" version="0.8">
-  document.addEventListener('DOMContentLoaded', function() {
+<script type="text/discourse-plugin" version="0.8">
+  api.onPageChange((url, title) => {
+    const user = api.getCurrentUser();
 
+    // If user is not logged in
+    if (!user) {
+        const replyButton = document.querySelector("#topic-footer-buttons .btn-icon-text");
+        const likeButton = document.querySelector(".actions .double-button .toggle-like");
 
+        if(replyButton) {
+            replyButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                console.log("do something with reply");
+            }, true);
+        }
+
+        if(likeButton) {
+            likeButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                console.log("do something with like");
+            }, true);
+        }
+    }
   });
-</script> -->
+</script>
 
 <script type="text/discourse-plugin" version="0.8">
-    api.onPageChange((url, title) => {  
+  api.onPageChange((url, title) => {
+    const user = api.getCurrentUser();
 
-        const loginButton = document.querySelector(".login-button");
+    if(user){
+        return;
+    };
 
-        const spanLabel = loginButton.querySelector(".d-button-label");
-    
-        if (spanLabel) {
-            spanLabel.textContent = "Tải ứng dụng";
-        };
-    
-        loginButton.addEventListener('click', function(event) {
-            // Prevent default behavior
-            event.preventDefault();
-    
-            // Stop propagation to prevent other event listeners from being called
-            event.stopPropagation();
-    
-            window.location.href = "https://onelink.to/seohomepageinfina";
-        }, true);
-
-
-      const user = api.getCurrentUser();
-  
-      // If user is not logged in
-      if (!user) {
-          const replyButton = document.querySelector("#topic-footer-buttons .btn-icon-text");
-          const likeButton = document.querySelector(".actions .double-button .toggle-like");
-  
-          if(replyButton) {
-              replyButton.addEventListener('click', function(event) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  console.log("do something with reply");
-              }, true);
-          }
-  
-          if(likeButton) {
-              likeButton.addEventListener('click', function(event) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  console.log("do something with like");
-              }, true);
-          }
+    const observer = new MutationObserver((mutationsList, observer) => {
+      for(let mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+          modifyLoginButton();
+        }
       }
     });
-  </script>
-  
+
+    const header = document.querySelector('.d-header');  // Replace with the appropriate selector
+    if(header) {
+      observer.observe(header, { attributes: false, childList: true, subtree: true });
+    }
+
+    function modifyLoginButton() {
+      const loginButton = document.querySelector(".login-button");
+      const spanLabel = loginButton.querySelector(".d-button-label");
+
+      if (spanLabel) {
+        spanLabel.textContent = "Tải ứng dụng";
+      }
+
+      loginButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        window.location.href = "https://onelink.to/seohomepageinfina";
+      }, true);
+    }
+
+    modifyLoginButton();
+  });
+</script>
