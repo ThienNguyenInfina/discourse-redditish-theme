@@ -20,7 +20,7 @@
     }, true);
 
     const user = api.getCurrentUser();
-
+    console.log({user})
     // user is already logged in, bail
     if (!user) {
         const replyButton = document.querySelector(".topic-footer-buttons button:has(.d-icon-reply)");
