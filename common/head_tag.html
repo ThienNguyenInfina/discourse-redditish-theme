@@ -9,13 +9,14 @@
   // do your work here...
   const clickCallback = (clickEvent) => {
     console.log(clickEvent);
+    console.log('doing something');
     alert("user is logging in");
     // ..
     // ..
   };
 
   api.onAppEvent("modal:body-shown", (event) => {
-    const loginButton = document.querySelector("#login-button");
+    const loginButton = document.querySelector(".login-button");
 
     if (loginButton) {
       loginButton.addEventListener("click", clickCallback, { once: true });
