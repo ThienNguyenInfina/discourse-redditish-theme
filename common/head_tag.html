@@ -23,9 +23,10 @@
     console.log({user})
     // user is already logged in, bail
     if (!user) {
-        const replyButton = document.querySelector(".topic-footer-buttons button");
+        const replyButton = document.querySelector(".topic-footer-buttons btn. .btn-icon-text .btn-primary .pull-right");
         const likeButton = document.querySelector(".actions .double-button .toggle-like");
-
+        console.log(replyButton)
+        console.log(likeButton)
         if(replyButton) {
             replyButton.addEventListener('click', function(event) {
                 event.preventDefault();
