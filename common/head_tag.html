@@ -13,7 +13,8 @@
             replyButton.addEventListener('click', function(event) {
                 event.preventDefault();
                 event.stopPropagation();
-                showModal("customModal");
+                console.log("click reply");
+                showModal("downloadAppModal");
             }, true);
         }
 
@@ -21,7 +22,8 @@
             likeButton.addEventListener('click', function(event) {
                 event.preventDefault();
                 event.stopPropagation();
-                showModal("customModal");
+                console.log("click heart");
+                showModal("downloadAppModal");
             }, true);
         }
     }

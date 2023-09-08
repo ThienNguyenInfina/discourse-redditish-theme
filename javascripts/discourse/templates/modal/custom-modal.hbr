@@ -1,3 +1,0 @@
-{{#d-modal-body title="custom_modal_title" class="custom-modal"}}
-  Your content goes here!
-{{/d-modal-body}}
