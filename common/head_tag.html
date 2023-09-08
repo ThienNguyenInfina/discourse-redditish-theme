@@ -23,7 +23,7 @@
     console.log({user})
     // user is already logged in, bail
     if (!user) {
-        const replyButton = document.querySelector(".topic-footer-buttons button:has(.d-icon-reply)");
+        const replyButton = document.querySelector(".topic-footer-buttons button");
         const likeButton = document.querySelector(".actions .double-button .toggle-like");
 
         if(replyButton) {
