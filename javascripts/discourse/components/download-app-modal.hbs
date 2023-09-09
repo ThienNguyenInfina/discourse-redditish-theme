@@ -1,9 +1,11 @@
-<DModal @title="My Modal" @closeModal={{@closeModal}}>
+<DModal @title="Tải ứng dụng Infina" @closeModal={{@closeModal}}>
   <:body>
-    Hello world, this is some content in a modal
+    Hãy tải ứng dụng Infina để trải nghiệm các tính năng mới của cộng đồng!
+    <DButton
+      id="download-app-btn"
+      class="btn-primary"
+      @translatedLabel="Tải ngay"
+      @action={{action "openDownloadLink"}}
+    />
   </:body>
-  <:footer>
-    <DButton class="btn-primary" @translatedLabel="Submit" />
-    <DModalCancel @close={{@closeModal}} />
-  </:footer>
 </DModal>

@@ -1,5 +1,5 @@
 <div class="custom-right-sidebar">
-  {{#if true}}
+  {{#if this.modalIsVisible}}
     <DownloadAppModal @closeModal={{fn (mut this.modalIsVisible) false}} />
   {{/if}}
 </div>
