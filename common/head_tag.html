@@ -42,6 +42,7 @@
       for(let mutation of mutationsList) {
         if (mutation.type === 'childList') {
           modifyLoginButton();
+          hideToggleOutlet();
         }
       }
     });
@@ -49,6 +50,15 @@
     const header = document.querySelector('.d-header');  // Replace with the appropriate selector
     if(header) {
       observer.observe(header, { attributes: false, childList: true, subtree: true });
+    }
+
+    function hideToggleOutlet() {
+      if(!user || !user.admin){
+        const outletButton = document.querySelector("#toggle-plugin-outlets");
+        if (outletButton) {
+          outletButton.style.display = "none";
+        }
+      }
     }
 
     function modifyLoginButton() {
@@ -68,8 +78,4 @@
 
     modifyLoginButton();
   });
-</script>
-
-<script type="text/discourse-plugin" version="0.8">
-  console.log("hellooo");
 </script>
