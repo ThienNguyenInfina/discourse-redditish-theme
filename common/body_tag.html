@@ -1,28 +1,7 @@
-<div
-  role="dialog"
-  id="download-app-modal"
-  class="modal d-modal fixed-modal ember-view in"
-  style="display: none; padding-right: 0px"
->
-  <div class="modal-outer-container" role="document">
-    <div class="modal-middle-container">
-      <div class="modal-inner-container">
-        <div class="modal-header">
-          <div class="modal-close">
-            <a class="close" data-dismiss="modal">
-              <i class="fa fa-times d-icon d-icon-times"></i>
-            </a>
-          </div>
-          <div class="title">
-            <h3 id="download-app-modal"></h3>
-          </div>
-        </div>
-        <div id="modal-alert" style="display: none"></div>
-        <div
-          id="download-app-modal-description"
-          class="avatar-selector modal-body ember-view"
-        ></div>
-      </div>
-    </div>
-  </div>
-</div>
+<script type="text/discourse-plugin" version="0.8">
+  const user = api.getCurrentUser();
+  console.log(user)
+  if(!user) {
+    return;
+  }
+</script>
