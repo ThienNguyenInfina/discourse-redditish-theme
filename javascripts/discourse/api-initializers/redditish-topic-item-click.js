@@ -1,11 +1,11 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
-import showModal from "discourse/lib/show-modal";
 import { wantsNewWindow } from "discourse/lib/intercept-click";
+import ShareTopicModal from "discourse/components/modal/share-topic";
 
 export default {
   name: "redditish-customize-topic-list-item",
 
-  initialize() {
+  initialize(owner) {
     withPluginApi("0.8", (api) => {
       api.modifyClass("component:topic-list-item", {
         pluginId: "redditish-theme",
@@ -20,10 +20,7 @@ export default {
             (target.nodeName === "A" && !target.closest(".raw-link")) ||
             target.closest(".badge-wrapper")
           ) {
-            if (wantsNewWindow(event)) {
-              return true;
-            }
-            return true;
+            return !!wantsNewWindow(event);
           }
 
           if (target.classList.contains("custom-topic-layout")) {
@@ -35,10 +32,12 @@ export default {
           }
 
           if (target.closest(".share-toggle")) {
-            const controller = showModal("share-topic", {
-              model: this.topic.category,
+            owner.lookup("service:modal").show(ShareTopicModal, {
+              model: {
+                category: this.topic.category,
+                topic: this.topic,
+              },
             });
-            controller.set("topic", this.topic);
             return true;
           }
 
