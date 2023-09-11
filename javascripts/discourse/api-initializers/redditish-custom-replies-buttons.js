@@ -5,8 +5,8 @@ export default {
   name: "redditish-custom-replies-buttons",
 
   initialize(owner) {
-    withPluginApi("0.8", (api) => {
-      api.modifyClass("component:topic-footer-buttons", {
+    withPluginApi("0.11.4", (api) => {
+      api.modifyClass("template:topic", {
         pluginId: "redditish-theme",
 
         click(event) {
@@ -15,7 +15,7 @@ export default {
             return this._super(event);
           }
 
-          if (target.closest(".d-icon-reply")) {
+          if (target.closest(".toggle-like")) {
             owner.lookup("service:modal").show(DownloadAppModal);
             return true;
           }
