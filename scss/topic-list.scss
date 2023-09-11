@@ -212,7 +212,8 @@ div.education {
     font-size: var(--font-up-1);
 
     .topic-excerpt-more {
-      font-size: var(--font-down-1);
+      font-size: inherit;
+      color: var(--tertiary);
     }
   }
 
