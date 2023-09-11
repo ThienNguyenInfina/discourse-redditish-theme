@@ -1,35 +1,3 @@
-<!-- <script type="text/discourse-plugin" version="0.8">
-  api.onPageChange((url, title) => {
-    const user = api.getCurrentUser();
-
-    // If user is not logged in
-    if (!user) {
-        const replyButton = document.querySelector("#topic-footer-buttons .btn-icon-text");
-        const likeButton = document.querySelector(".actions .double-button .toggle-like");
-
-        const showModal = require("discourse/lib/show-modal").default;
-
-        if(replyButton) {
-            replyButton.addEventListener('click', function(event) {
-                event.preventDefault();
-                event.stopPropagation();
-                console.log("click reply");
-                showModal("downloadAppModal");
-            }, true);
-        }
-
-        if(likeButton) {
-            likeButton.addEventListener('click', function(event) {
-                event.preventDefault();
-                event.stopPropagation();
-                console.log("click heart");
-                showModal("downloadAppModal");
-            }, true);
-        }
-    }
-  });
-</script> -->
-
 <script type="text/discourse-plugin" version="0.8">
   api.onPageChange((url, title) => {
     const user = api.getCurrentUser();
