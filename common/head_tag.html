@@ -47,3 +47,9 @@
     modifyLoginButton();
   });
 </script>
+
+<script type="text/discourse-plugin" version="0.8">
+  api.onPageChange((url, title) => {
+    console.log({url. title})
+  });
+</script>
