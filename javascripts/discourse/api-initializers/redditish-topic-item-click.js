@@ -25,8 +25,10 @@ export default {
             return true;
           }
 
-          if (target.closest("reply-count")) {
+          if (target.closest(".reply-count")) {
             window.open(`t/${this.topic.id}`);
+
+            return true;
           }
         },
       });
