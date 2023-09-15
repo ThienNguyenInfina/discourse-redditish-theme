@@ -1,5 +1,9 @@
 .discovery-navigation-bar-above-outlet .plugin-outlet-component {
   display: none;
+
+  .ember-view {
+    display: none;
+  }
 }
 
 .discovery-navigation-bar-above-outlet .custom-post-bar {
