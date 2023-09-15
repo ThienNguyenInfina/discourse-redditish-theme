@@ -1,14 +1,14 @@
 :root {
   --d-button-border-radius: 100px;
   --d-nav-pill-border-radius: 100px;
-  --d-input-border-radius: 4px;
+  --d-input-border-radius: 16px;
   --topic-body-width: 900px;
 }
 
 @mixin custom-card {
   box-sizing: border-box;
   padding: 0.75em;
-  border-radius: 0.25em;
+  border-radius: 1em;
   border: 1px solid var(--redditish-border-color);
   background: var(--secondary);
   .discourse-no-touch & {
