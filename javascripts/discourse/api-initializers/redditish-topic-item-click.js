@@ -16,10 +16,20 @@ export default {
             return this._super(event);
           }
 
+          console.log(target);
+
           if (
             (target.nodeName === "A" && !target.closest(".raw-link")) ||
             target.closest(".badge-wrapper")
           ) {
+            if (target.closest(".topic-excerpt")) {
+              return this.navigateToTopic(this.topic, this.topic.lastUnreadUrl);
+            }
+
+            if (target.closest(".badge-wrapper")) {
+              return window.open(`c/${this.topic.category.id}`);
+            }
+
             return !!wantsNewWindow(event);
           }
 
