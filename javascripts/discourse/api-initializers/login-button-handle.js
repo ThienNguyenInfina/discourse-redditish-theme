@@ -40,25 +40,8 @@ export default {
           return;
         }
 
-        const observer = new MutationObserver((mutationsList) => {
-          for (let mutation of mutationsList) {
-            if (mutation.type === "childList") {
-              modifyLoginButton();
-              hideToggleOutlet(user);
-            }
-          }
-        });
-
-        const header = document.querySelector(".d-header"); // Replace with the appropriate selector
-        if (header) {
-          observer.observe(header, {
-            attributes: false,
-            childList: true,
-            subtree: true,
-          });
-        }
-
         modifyLoginButton();
+        hideToggleOutlet(user);
       });
     });
   },
