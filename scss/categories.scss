@@ -17,15 +17,17 @@
 
   .custom-category-item {
     display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 12px;
     background-color: var(--primary-low);
-    margin: 0.5em 1em 0.5em 1em;
-    padding: 8px 12px 8px 12px;
+    margin: 0.3em;
+    padding: 6px 10px 6px 10px;
     flex-direction: row;
 
     .cate-color {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       border-radius: 4px;
       margin-right: 8px;
     }
@@ -33,6 +35,9 @@
     span a {
       color: var(--header_primary);
       font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
     }
   }
 }
