@@ -3,3 +3,41 @@
 .category-list {
   @include custom-card;
 }
+
+#custom-list-of-categories {
+  box-sizing: border-box;
+  padding: 0.5em 0.75em 0.5em 0.75em;
+  background: var(--secondary);
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  margin-bottom: 1.25em;
+  border: 0.5em solid var(--redditish-border-color);
+  border-image-slice: 1;
+  border-image-source: linear-gradient(352deg, #178bfc, #0666eb 43%);
+  border-radius: 0em 0em 1em 1em;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+
+  .custom-category-item {
+    display: flex;
+    border-radius: 12px;
+    background-color: var(--primary-low);
+    margin: 0.5em 1em 0.5em 1em;
+    padding: 8px 12px 8px 12px;
+    flex-direction: row;
+
+    .cate-color {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      margin-right: 8px;
+    }
+
+    span a {
+      color: var(--header_primary);
+      font-weight: 600;
+    }
+  }
+}

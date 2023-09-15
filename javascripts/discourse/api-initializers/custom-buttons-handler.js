@@ -2,7 +2,7 @@ import { withPluginApi } from "discourse/lib/plugin-api";
 import DownloadAppModal from "../components/modal/download-app-modal";
 
 export default {
-  name: "tesing",
+  name: "custom-button-handler",
 
   initialize(owner) {
     withPluginApi("0.11.4", (api) => {
