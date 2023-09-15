@@ -16,30 +16,32 @@ export default {
             return this._super(event);
           }
 
-          console.log(target, target.tagName, target.nodeName);
+          // if (
+          //   (target.nodeName === "A" && !target.closest(".raw-link")) ||
+          //   target.closest(".badge-wrapper")
+          // ) {
+          //   if (target.closest(".topic-excerpt")) {
+          //     return this.navigateToTopic(this.topic, this.topic.lastUnreadUrl);
+          //   }
 
-          if (
-            (target.nodeName === "A" && !target.closest(".raw-link")) ||
-            target.closest(".badge-wrapper")
-          ) {
-            if (target.closest(".topic-excerpt")) {
-              return this.navigateToTopic(this.topic, this.topic.lastUnreadUrl);
-            }
+          //   if (target.closest(".badge-wrapper")) {
+          //     return window.open(`c/${this.topic.category.id}`);
+          //   }
 
-            if (target.closest(".badge-wrapper")) {
-              return window.open(`c/${this.topic.category.id}`);
-            }
+          //   if (target.closest(".discourse-tag")) {
+          //     return window.open(target.href);
+          //   }
 
-            return !!wantsNewWindow(event);
-          }
+          //   return !!wantsNewWindow(event);
+          // }
 
-          if (target.classList.contains("custom-topic-layout")) {
-            if (wantsNewWindow(event)) {
-              window.open(this.topic.lastUnreadUrl, "_blank");
-              return false;
-            }
-            return this.navigateToTopic(this.topic, this.topic.lastUnreadUrl);
-          }
+          // if (target.classList.contains("custom-topic-layout")) {
+          //   if (wantsNewWindow(event)) {
+          //     window.open(this.topic.lastUnreadUrl, "_blank");
+          //     return false;
+          //   }
+          //   return this.navigateToTopic(this.topic, this.topic.lastUnreadUrl);
+          // }
 
           if (target.closest(".share-toggle")) {
             owner.lookup("service:modal").show(ShareTopicModal, {
@@ -51,7 +53,7 @@ export default {
             return true;
           }
 
-          return this.navigateToTopic(this.topic, this.topic.lastUnreadUrl);
+          // return this.navigateToTopic(this.topic, this.topic.lastUnreadUrl);
         },
       });
     });
