@@ -1,8 +1,13 @@
 <div id="custom-list-of-categories" {{did-insert this.getCategories}}>
   {{#each this.categories as |category|}}
-    <div class="custom-category-item" id="{{category.id}}">
-      <div class="cate-color" style="background-color: #{{category.color}};"></div>
-      <span><a href="/c/{{category.id}}">{{category.name}}</a></span>
-    </div>
+    {{#if category.topic_count}}
+      <div class="custom-category-item" id="{{category.id}}">
+        <div
+          class="cate-color"
+          style="background-color: #{{category.color}};"
+        ></div>
+        <span><a href="/c/{{category.id}}">{{category.name}}</a></span>
+      </div>
+    {{/if}}
   {{/each}}
 </div>
