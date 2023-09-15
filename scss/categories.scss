@@ -5,6 +5,7 @@
 }
 
 #custom-list-of-categories {
+  @include custom-card;
   box-sizing: border-box;
   padding: 0.5em 0.75em 0.5em 0.75em;
   background: var(--secondary);
@@ -12,13 +13,7 @@
   flex-wrap: wrap;
   background-color: white;
   margin-bottom: 1.25em;
-  border: 0.5em solid var(--redditish-border-color);
-  border-image-slice: 1;
-  border-image-source: linear-gradient(352deg, #178bfc, #0666eb 43%);
-  border-radius: 0em 0em 1em 1em;
-  border-bottom: 0;
-  border-left: 0;
-  border-right: 0;
+  border-radius: 1em;
 
   .custom-category-item {
     display: flex;
