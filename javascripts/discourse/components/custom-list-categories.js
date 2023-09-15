@@ -5,7 +5,6 @@ import { tracked } from "@glimmer/tracking";
 
 export default class CustomListCategories extends Component {
   @service store;
-  @service route;
   @tracked categories = null;
 
   @action
