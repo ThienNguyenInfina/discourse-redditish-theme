@@ -16,7 +16,7 @@ export default {
             return this._super(event);
           }
 
-          console.log(target);
+          console.log(target, target.tagName, target.nodeName);
 
           if (
             (target.nodeName === "A" && !target.closest(".raw-link")) ||
