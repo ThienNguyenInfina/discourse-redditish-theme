@@ -59,11 +59,15 @@
     </div>
   {{/if}}
   <div class="custom-topic-layout_bottom-bar">
-    <span class="reply-count">
-      {{d-icon "reply"}}
-      {{topic.replyCount}}
-      {{i18n "replies"}}
-    </span>
+    <a
+    href="/t/{{topic.lastUnreadUrl}}"
+    >
+      <span class="reply-count">
+        {{d-icon "reply"}}
+        {{topic.replyCount}}
+        {{i18n "replies"}}
+      </span>
+    </a>
     <span class="share-toggle">
       {{d-icon "link"}}
       {{i18n "post.quote_share"}}
