@@ -1,6 +1,5 @@
-import { withPluginApi } from "discourse/lib/plugin-api";
-import { wantsNewWindow } from "discourse/lib/intercept-click";
 import ShareTopicModal from "discourse/components/modal/share-topic";
+import { withPluginApi } from "discourse/lib/plugin-api";
 
 export default {
   name: "redditish-customize-topic-list-item",
@@ -16,33 +15,6 @@ export default {
             return this._super(event);
           }
 
-          // if (
-          //   (target.nodeName === "A" && !target.closest(".raw-link")) ||
-          //   target.closest(".badge-wrapper")
-          // ) {
-          //   if (target.closest(".topic-excerpt")) {
-          //     return this.navigateToTopic(this.topic, this.topic.lastUnreadUrl);
-          //   }
-
-          //   if (target.closest(".badge-wrapper")) {
-          //     return window.open(`c/${this.topic.category.id}`);
-          //   }
-
-          //   if (target.closest(".discourse-tag")) {
-          //     return window.open(target.href);
-          //   }
-
-          //   return !!wantsNewWindow(event);
-          // }
-
-          // if (target.classList.contains("custom-topic-layout")) {
-          //   if (wantsNewWindow(event)) {
-          //     window.open(this.topic.lastUnreadUrl, "_blank");
-          //     return false;
-          //   }
-          //   return this.navigateToTopic(this.topic, this.topic.lastUnreadUrl);
-          // }
-
           if (target.closest(".share-toggle")) {
             owner.lookup("service:modal").show(ShareTopicModal, {
               model: {
@@ -52,8 +24,6 @@ export default {
             });
             return true;
           }
-
-          // return this.navigateToTopic(this.topic, this.topic.lastUnreadUrl);
         },
       });
     });
