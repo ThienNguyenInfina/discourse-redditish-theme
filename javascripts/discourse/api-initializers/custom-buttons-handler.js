@@ -6,20 +6,7 @@ export default {
 
   initialize(owner) {
     withPluginApi("0.8", (api) => {
-      api.onPageChange((url) => {
-        if (url.includes("/t/")) {
-          // Select the element with class "cooked"
-          const cookedElement = document.querySelector(".cooked");
-
-          if (cookedElement) {
-            // Use a regular expression to replace the undesired part
-            cookedElement.innerHTML = cookedElement.innerHTML.replace(
-              /\s*\[question\] [^<]+/,
-              ""
-            );
-          }
-        }
-
+      api.onPageChange(() => {
         const user = api.getCurrentUser();
 
         async function showModalDownload() {
