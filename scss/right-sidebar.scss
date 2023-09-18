@@ -89,14 +89,7 @@
         margin: 0.25em 0 !important; // overriding another override
         a {
           color: var(--primary);
-        }
-      }
-
-      .visited {
-        h2 {
-          a {
-            color: var(--primary-medium);
-          }
+          font-weight: 600;
         }
       }
 
