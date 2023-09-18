@@ -37,6 +37,7 @@ export default {
               imgElement.src = image.url;
               imgElement.alt = image.description;
               imgElement.title = image.description;
+              imgElement.class = "topic-review-image";
               imgElement.style.width = "100%";
               cookedElement.prepend(imgElement);
             }
