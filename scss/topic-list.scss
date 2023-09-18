@@ -76,7 +76,8 @@ body.category,
 .list-controls {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+
+
 }
 
 div.education {
@@ -249,7 +250,7 @@ div.education {
 .custom-post-bar-contents {
   @include custom-card;
 
-  display: flex;
+  display: none;
   align-items: center;
 
   .avatar {
