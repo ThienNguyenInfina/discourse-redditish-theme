@@ -32,7 +32,7 @@ export default {
               }
             }
 
-            if (image) {
+            if (image.url) {
               const imgElement = document.createElement("img");
               imgElement.classList.add("topic-review-image");
               imgElement.src = image.url;
