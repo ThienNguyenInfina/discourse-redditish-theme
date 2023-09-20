@@ -9,6 +9,10 @@
     display: flex;
     flex-direction: column;
 
+    .category-about-wrapper {
+      margin-bottom: 1em;
+    }
+
     &_welcome,
     &_recent,
     &_category-about,
@@ -29,12 +33,7 @@
         display: flex;
         flex-direction: column;
         gap: 1em 0;
-        margin-top: 1em;
       }
-    }
-
-    &_subcategories {
-      margin-bottom: 1em;
     }
 
     &_welcome {

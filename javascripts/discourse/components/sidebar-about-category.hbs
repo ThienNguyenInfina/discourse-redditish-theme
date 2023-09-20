@@ -1,7 +1,9 @@
 {{#if this.category}}
   {{! ensure we've got something to show so we don't get an empty block}}
   {{#if (or this.category.description this.currentUser)}}
-    <div class="custom-right-sidebar-sticky_category-about">
+    <div
+      class="custom-right-sidebar-sticky_category-about category-about-wrapper"
+    >
       {{#if this.category.description}}
         <h3>{{theme-i18n "about_category"}}</h3>
         <p>{{html-safe this.category.description}}</p>
