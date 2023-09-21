@@ -19,6 +19,16 @@
     &_tag-about {
       @include custom-card;
     }
+    &_tag-about,
+    &_category-about {
+      p {
+        color: var(--primary-high);
+        margin: 0;
+        + .custom-right-custom-right-sidebar-sticky_controls {
+          margin-top: 1em;
+        }
+      }
+    }
 
     &_tag-about,
     &_category-about {
@@ -71,13 +81,12 @@
 
     &_recent {
       margin-top: 1rem;
-
-      tr {
+      &-topics-wrappper {
         border: none;
         border-top: 1px solid var(--primary-low);
         &:hover {
           border-color: var(--redditish-border-highlight-color);
-          + tr {
+          + .custom-right-sidebar_recent-topics-wrappper {
             border-color: var(--redditish-border-highlight-color);
           }
         }
