@@ -10,12 +10,8 @@ export default {
         if (url.includes("/t/")) {
           // Select the element with class "cooked"
           const cookedElement = document.querySelector(".cooked");
-          const img = document.querySelector("img"); // This will select the first <img> element on the page
-
-          if (img.offsetWidth === 70) {
-            // mini image
-            img.classList.add("display-none");
-          }
+          const img = document.querySelector(".cooked img"); // This will select the first <img> element on the page
+          img.classList.add("display-none");
 
           if (cookedElement) {
             // Use a regular expression to replace the undesired part
