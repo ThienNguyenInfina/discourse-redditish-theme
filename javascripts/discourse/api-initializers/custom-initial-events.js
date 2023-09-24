@@ -11,7 +11,6 @@ export default {
           // Select the element with class "cooked"
           const cookedElement = document.querySelector(".cooked");
           const img = document.querySelector(".cooked img"); // This will select the first <img> element on the page
-          console.log({ img });
           img.classList.add("display-none");
 
           if (cookedElement) {
