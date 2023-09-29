@@ -13,7 +13,7 @@ export default {
           const img = document.querySelector(".cooked img"); // This will select the first <img> element on the page
           img.classList.add("display-none");
 
-          const existingAnchor = document.querySelector("a span");
+          const existingAnchor = document.querySelector(".cooked a span");
           console.log({ existingAnchor });
           const content = existingAnchor
             ? existingAnchor.textContent || existingAnchor.innerText
