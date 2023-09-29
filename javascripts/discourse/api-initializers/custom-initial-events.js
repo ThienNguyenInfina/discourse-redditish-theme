@@ -12,6 +12,25 @@ export default {
           const cookedElement = document.querySelector(".cooked");
           const img = document.querySelector(".cooked img"); // This will select the first <img> element on the page
           img.classList.add("display-none");
+          const existingAnchor = document.querySelector("a span");
+          const content = existingAnchor
+            ? existingAnchor.textContent || existingAnchor.innerText
+            : null;
+
+          if (content && content.trim() === "08 9990 9928") {
+            const newAnchor = document.createElement("a");
+            newAnchor.href = "tel://08 9990 9928";
+
+            const newSpan = document.createElement("span");
+            newSpan.textContent = "08 9990 9928";
+
+            newAnchor.appendChild(newSpan);
+
+            existingAnchor.parentElement.replaceChild(
+              newAnchor,
+              existingAnchor
+            );
+          }
 
           if (cookedElement) {
             // Use a regular expression to replace the undesired part
