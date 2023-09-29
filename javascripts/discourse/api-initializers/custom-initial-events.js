@@ -12,12 +12,15 @@ export default {
           const cookedElement = document.querySelector(".cooked");
           const img = document.querySelector(".cooked img"); // This will select the first <img> element on the page
           img.classList.add("display-none");
+
           const existingAnchor = document.querySelector("a span");
+          console.log({ existingAnchor });
           const content = existingAnchor
             ? existingAnchor.textContent || existingAnchor.innerText
             : null;
-
+          console.log({ content });
           if (content && content.trim() === "08 9990 9928") {
+            console.log("hello");
             const newAnchor = document.createElement("a");
             newAnchor.href = "tel://08 9990 9928";
 
@@ -30,6 +33,8 @@ export default {
               newAnchor,
               existingAnchor
             );
+
+            console.log({ existingAnchor });
           }
 
           if (cookedElement) {
