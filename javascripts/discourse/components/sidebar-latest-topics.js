@@ -14,10 +14,11 @@ export default class LatestTopicsSidebar extends Component {
   async getLatestTopics() {
     let topicList;
 
-    let filter = "tag/noi-bat";
-
     topicList = await this.store.findFiltered("topicList", {
-      filter,
+      filter: "latest",
+      params: {
+        tags: ["noi-bat"],
+      },
     });
 
     this.latestTopics = topicList.topics
