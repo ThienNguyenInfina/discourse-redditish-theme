@@ -11,7 +11,7 @@ export default {
           // Select the element with class "cooked"
           const cookedElement = document.querySelector(".cooked");
           const img = document.querySelector(".cooked img"); // This will select the first <img> element on the page
-          const categoryName = "";
+          let categoryName = "";
           const element = document.querySelector("span.category-name");
           if (element) {
             categoryName = element.textContent;
