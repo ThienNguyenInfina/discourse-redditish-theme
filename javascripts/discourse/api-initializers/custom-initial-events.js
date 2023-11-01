@@ -11,6 +11,12 @@ export default {
           // Select the element with class "cooked"
           const cookedElement = document.querySelector(".cooked");
           const img = document.querySelector(".cooked img"); // This will select the first <img> element on the page
+          const categoryName = "";
+          const element = document.querySelector("span.category-name");
+          if (element) {
+            categoryName = element.textContent;
+          }
+
           img.classList.add("display-none");
 
           const existingAnchor = document.querySelector("p a span");
@@ -60,6 +66,11 @@ export default {
               imgElement.alt = image.description;
               imgElement.title = image.description;
               imgElement.style.width = "100%";
+
+              if (categoryName === "Truyền động lực") {
+                imgElement.style.display = "none";
+              }
+
               cookedElement.prepend(imgElement);
             }
           }
