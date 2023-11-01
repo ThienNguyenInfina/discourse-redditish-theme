@@ -13,6 +13,32 @@ export default {
           owner.lookup("service:modal").show(DownloadAppModal);
         }
 
+        function toggleXButton() {
+          const div = document.querySelector("#download-app-button-mobile");
+          const a = document.querySelector(".close-download-button");
+          if (div.style.display === "none") {
+            div.style.display = "block";
+          } else {
+            div.style.display = "none";
+          }
+
+          if (a.style.display === "none") {
+            a.style.display = "block";
+          } else {
+            a.style.display = "none";
+          }
+        }
+
+        const closeDownLoadButton = document.querySelector(
+          ".close-download-button"
+        );
+
+        if (closeDownLoadButton) {
+          closeDownLoadButton.addEventListener("click", function () {
+            toggleXButton();
+          });
+        }
+
         // If user is not logged in
         if (!user) {
           const replyButton = document.querySelector(

@@ -95,7 +95,7 @@
 .mobile-float {
   display: none;
   position: fixed;
-  bottom: 5rem;
+  bottom: 3rem;
   right: 40px;
   background-image: linear-gradient(352deg, #0666eb 43%, #178bfc);
   color: #fff;
@@ -106,6 +106,50 @@
   padding: 12px;
   justify-content: center;
   align-items: center;
+}
+
+.close-download-button {
+  display: none;
+  position: fixed;
+  bottom: 5.5rem;
+  left: calc(50% + 35px);
+  z-index: 1;
+  background-color: transparent;
+  color: #999;
+}
+
+#download-app-button-mobile {
+  display: none;
+  position: fixed;
+  bottom: 3rem;
+  background-image: linear-gradient(352deg, #0666eb 43%, #178bfc);
+  color: #fff;
+  border-radius: 100px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1;
+  width: 100px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  left: calc(50% - 50px);
+  flex-direction: row;
+
+  p {
+    color: white;
+    font-weight: bold;
+    line-height: 18px;
+    font-size: 14px;
+  }
+}
+
+#download-app-button-mobile:hover {
+  background-image: linear-gradient(352deg, white 43%, white);
+
+  .floating-icon,
+  p {
+    color: #0666eb;
+  }
 }
 
 .floating-icon {
@@ -139,6 +183,10 @@
     display: none;
   }
   #download-app-button-mobile {
+    display: block;
+  }
+
+  .close-download-button {
     display: block;
   }
 }
