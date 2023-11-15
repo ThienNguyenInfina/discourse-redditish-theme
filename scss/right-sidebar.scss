@@ -12,6 +12,7 @@
   .custom-right-sidebar-sticky {
     display: flex;
     flex-direction: column;
+    min-width: 340px;
 
     .category-about-wrapper {
       margin-bottom: 1em;
