@@ -27,6 +27,17 @@
   });
 </script>
 
+<!-- add custom navigation bar -->
+<script type="text/discourse-plugin" version="0.8">
+  api.addNavigationBarItem({
+    name: "latest",
+    displayName: "Mới nhất",
+    href: "/latest?order=created",
+    title: "Chủ đề và bài viết mới nhất theo thời gian"
+  })
+</script>
+<!-- end add custom navigation bar -->
+
 <!-- clarity ms -->
 <script type="text/javascript">
   (function (c, l, a, r, i, t, y) {

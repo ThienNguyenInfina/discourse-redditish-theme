@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "dev:watch": "discourse_theme watch ../discourse-redditish-theme"
+  },
   "author": "k",
   "license": "MIT",
   "devDependencies": {
