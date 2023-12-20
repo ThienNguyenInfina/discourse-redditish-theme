@@ -1,7 +1,7 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 
 export default {
-  name: "custom-initial-events",
+  name: "custom-nav-bar",
 
   initialize() {
     withPluginApi("0.12.3", (api) => {
