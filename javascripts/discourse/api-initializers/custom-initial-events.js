@@ -60,11 +60,12 @@ export default {
             }
 
             if (image.url) {
+              const imageTitle = img.getAttribute("title");
               const imgElement = document.createElement("img");
               imgElement.classList.add("topic-review-image");
               imgElement.src = image.url;
-              imgElement.alt = image.description;
-              imgElement.title = image.description;
+              imgElement.alt = imageTitle ?? image.description;
+              imgElement.title = imageTitle ?? image.description;
               imgElement.style.width = "100%";
 
               if (categoryName === "Truyền động lực") {
